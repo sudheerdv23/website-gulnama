@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#FAF6F0] text-[#2C1A12] font-sans">
@@ -21,64 +22,59 @@ export default function Home() {
         </button>
       </nav>
 
-      {/* HERO */}
-      <section className="pt-24 md:pt-0 min-h-screen grid md:grid-cols-2">
-        {/* Left */}
-        <div className="flex flex-col justify-center px-6 py-16 md:px-16 md:py-0 order-2 md:order-1">
-          <p className="text-xs tracking-[0.3em] uppercase text-[#B8924A] mb-4">New Collection · 2026</p>
-          <h1 className="font-serif text-5xl md:text-7xl font-light leading-tight">
-            Draped in<br />
-            <em className="text-[#C2705A] not-italic">Bloom</em><br />
-            Built for Her
-          </h1>
-          <p className="mt-6 text-sm leading-loose text-[#6B4F3A] max-w-sm">
-            Premium sarees for the modern Indian woman — crafted with floral artistry, designed for the city she commands.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <a href="#collection" className="bg-[#C2705A] text-[#FAF6F0] text-xs tracking-widest uppercase px-8 py-4 text-center hover:bg-[#2C1A12] transition-colors">
-              Explore Collection
-            </a>
-            <a href="#story" className="text-xs tracking-widest uppercase border-b border-[#B8924A] pb-1 self-start sm:self-center hover:text-[#C2705A] transition-colors">
-              Our Story →
-            </a>
-          </div>
-        </div>
+     {/* Hero */}
+<section className="relative min-h-screen flex items-center overflow-hidden">
+  <div className="absolute inset-0 z-0">
+    <Image
+      src="https://res.cloudinary.com/dpbylqekj/image/upload/v1773073842/WhatsApp_Image_2026-03-02_at_14.12.56_xadbaz.jpg"
+      alt="Gulnama blush saree"
+      fill
+      className="object-cover object-center"
+      priority
+    />
+    <div className="absolute inset-0 bg-[#2C1A12]/45" />
+  </div>
 
-        {/* Right - Visual */}
-        <div className="relative bg-[#F0E0D6] min-h-[60vw] md:min-h-0 order-1 md:order-2 flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            {/* Pattern */}
-            {[...Array(20)].map((_, i) => (
-              <div key={i} className="absolute rounded-full border border-[#2C1A12]"
-                style={{
-                  width: `${(i % 5 + 1) * 40}px`,
-                  height: `${(i % 5 + 1) * 40}px`,
-                  top: `${(i * 17) % 100}%`,
-                  left: `${(i * 23) % 100}%`,
-                  opacity: 0.3
-                }}
-              />
-            ))}
-          </div>
-          {/* Flower */}
-          <div className="relative w-64 h-64 md:w-80 md:h-80 animate-spin" style={{ animationDuration: '30s' }}>
-            {[...Array(12)].map((_, i) => (
-              <div key={i} className="absolute left-1/2 top-1/2 w-12 h-24 md:w-14 md:h-28 -ml-6 -mt-24 md:-ml-7 md:-mt-28 rounded-t-full rounded-b-full"
-                style={{
-                  background: 'linear-gradient(to bottom, rgba(194,112,90,0.6), rgba(184,146,74,0.3))',
-                  transform: `rotate(${i * 30}deg)`,
-                  transformOrigin: 'bottom center'
-                }}
-              />
-            ))}
-            <div className="absolute left-1/2 top-1/2 w-10 h-10 -ml-5 -mt-5 rounded-full bg-[#B8924A] shadow-lg shadow-[#B8924A]/40" />
-          </div>
-          <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 bg-[#FAF6F0]/90 backdrop-blur-sm border border-[#B8924A]/30 p-4 text-center">
-            <p className="text-[10px] tracking-[0.25em] uppercase text-[#B8924A]">Exclusively Crafted</p>
-            <p className="font-serif text-base mt-1">For the City Woman</p>
-          </div>
-        </div>
-      </section>
+  <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <p className="text-[#F0E0D6] text-sm tracking-[0.3em] uppercase mb-4">
+        First Collection · Launching Soon
+      </p>
+      <h1 className="text-5xl lg:text-7xl font-light text-white leading-tight mb-6">
+        Draped<br />
+        <span className="text-[#C2705A] italic">in Bloom</span>
+      </h1>
+      <p className="text-[#F0E0D6] text-lg font-light leading-relaxed mb-8 max-w-md">
+        Premium floral sarees crafted for the Indian city woman.
+        Bold enough for ambition. Soft enough to breathe.
+      </p>
+      <div className="flex gap-4 flex-wrap">
+        <button className="bg-[#C2705A] text-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-[#a85c48] transition-colors">
+          Explore Collection
+        </button>
+        <button className="border border-white text-white px-8 py-3 text-sm tracking-widest uppercase hover:bg-white/10 transition-colors">
+          Join Waitlist
+        </button>
+      </div>
+    </div>
+
+    <div className="hidden lg:block relative">
+      <div className="relative w-80 h-96 ml-auto overflow-hidden shadow-2xl">
+        <Image
+          src="https://res.cloudinary.com/dpbylqekj/image/upload/v1773073841/WhatsApp_Image_2026-03-02_at_14.24.19_qlroeg.jpg"
+          alt="Gulnama butter yellow saree"
+          fill
+          className="object-cover object-top"
+        />
+      </div>
+      <div className="absolute -bottom-6 -left-6 bg-[#FAF6F0] p-4 shadow-lg">
+        <p className="text-[#C2705A] text-xs tracking-widest uppercase">Handcrafted in India</p>
+        <p className="text-[#2C1A12] text-sm font-medium">First Collection</p>
+        <p className="text-[#B8924A] text-xs">Samples in Production</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* MARQUEE */}
       <div className="bg-[#2C1A12] py-3 overflow-hidden">
@@ -145,49 +141,86 @@ export default function Home() {
         </div>
       </section>
 
-      {/* COLLECTION */}
-      <section id="collection" className="py-20 px-6 md:px-16 bg-[#FAF6F0]">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
-            <div>
-              <p className="text-[10px] tracking-[0.3em] uppercase text-[#B8924A] mb-2">Curated for You</p>
-              <h2 className="font-serif text-4xl md:text-5xl font-light">The <em className="text-[#C2705A] not-italic">Bloom</em> Edit</h2>
-            </div>
-            <a href="#" className="mt-4 md:mt-0 text-xs tracking-widest uppercase border-b border-[#B8924A] pb-1 self-start hover:text-[#C2705A] transition-colors">View All Sarees →</a>
-          </div>
+{/* Collection */}
+<section className="py-24 bg-[#FAF6F0]">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="text-center mb-16">
+      <p className="text-[#C2705A] text-sm tracking-[0.3em] uppercase mb-3">
+        The Bloom Edit
+      </p>
+      <h2 className="text-4xl font-light text-[#2C1A12]">First Collection</h2>
+      <p className="text-[#6B5248] mt-4 max-w-xl mx-auto text-lg font-light">
+        Four sarees. Each one a garden. Each one made for her.
+      </p>
+    </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[
-              { name: 'Jasmine Dusk', desc: 'Georgette · Floral Zari Border', price: '₹12,500', tag: 'Bestseller', bg: 'from-[#E8D5C8] to-[#D4A898]' },
-              { name: 'Gulmohar Gold', desc: 'Silk Organza · Hand Embroidered', price: '₹18,000', tag: 'New Arrival', bg: 'from-[#D4C5B0] to-[#C9B090]' },
-              { name: 'Lotus Evening', desc: 'Pure Banarasi · Digital Print', price: '₹22,000', tag: 'Limited', bg: 'from-[#C5D4C5] to-[#A8C0A8]' },
-            ].map((product) => (
-              <div key={product.name} className="group cursor-pointer">
-                <div className={`relative h-80 md:h-96 bg-gradient-to-br ${product.bg} flex items-center justify-center overflow-hidden`}>
-                  <span className="absolute top-3 left-3 bg-[#FAF6F0] text-[#C2705A] text-[10px] tracking-widest uppercase px-3 py-1">{product.tag}</span>
-                  <div className="w-36 h-36 relative group-hover:scale-105 transition-transform duration-500" style={{ animation: 'spin 25s linear infinite' }}>
-                    {[...Array(12)].map((_, i) => (
-                      <div key={i} className="absolute left-1/2 top-1/2 w-7 h-14 -ml-3.5 -mt-14 rounded-t-full rounded-b-full"
-                        style={{
-                          background: 'linear-gradient(to bottom, rgba(194,112,90,0.5), rgba(184,146,74,0.2))',
-                          transform: `rotate(${i * 30}deg)`,
-                          transformOrigin: 'bottom center'
-                        }}
-                      />
-                    ))}
-                    <div className="absolute left-1/2 top-1/2 w-5 h-5 -ml-2.5 -mt-2.5 rounded-full bg-[#B8924A]" />
-                  </div>
-                </div>
-                <div className="pt-4">
-                  <h3 className="font-serif text-xl">{product.name}</h3>
-                  <p className="text-xs text-[#8B6A55] mt-1">{product.desc}</p>
-                  <p className="text-sm mt-2"><span className="text-[10px] text-[#8B6A55] tracking-widest uppercase mr-1">From</span>{product.price}</p>
-                </div>
-              </div>
-            ))}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {[
+        {
+          image: "https://res.cloudinary.com/dpbylqekj/image/upload/v1773073842/WhatsApp_Image_2026-03-02_at_14.12.56_xadbaz.jpg",
+          name: "Blossom Garden",
+          fabric: "Linen · Hand Embroidery",
+          price: "₹18,000",
+          tag: "Hand Embroidered",
+        },
+        {
+          image: "https://res.cloudinary.com/dpbylqekj/image/upload/v1773073841/WhatsApp_Image_2026-03-02_at_14.12.49_augdww.jpg",
+          name: "Jasmine Dusk",
+          fabric: "Linen · Hand Embroidery",
+          price: "₹18,000",
+          tag: "Hand Embroidered",
+        },
+        {
+          image: "https://res.cloudinary.com/dpbylqekj/image/upload/v1773073841/WhatsApp_Image_2026-03-02_at_14.17.37_h7kbaw.jpg",
+          name: "Ivory Meadow",
+          fabric: "Linen · Digital Print",
+          price: "₹14,500",
+          tag: "New",
+        },
+        {
+          image: "https://res.cloudinary.com/dpbylqekj/image/upload/v1773073841/WhatsApp_Image_2026-03-02_at_14.24.19_qlroeg.jpg",
+          name: "Butter Bloom",
+          fabric: "Linen · Digital Print",
+          price: "₹14,500",
+          tag: "New",
+        },
+      ].map((item, i) => (
+        <div key={i} className="group cursor-pointer">
+          <div className="relative overflow-hidden aspect-[3/4] bg-[#F0E0D6]">
+            <Image
+              src={item.image}
+              alt={item.name}
+              fill
+              className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute top-3 left-3">
+              <span className="bg-white/90 text-[#C2705A] text-xs tracking-widest uppercase px-2 py-1">
+                {item.tag}
+              </span>
+            </div>
+            <div className="absolute inset-0 bg-[#2C1A12]/0 group-hover:bg-[#2C1A12]/20 transition-colors duration-300" />
+            <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+              <button className="w-full bg-white text-[#2C1A12] py-2 text-xs tracking-widest uppercase">
+                Add to Waitlist
+              </button>
+            </div>
+          </div>
+          <div className="pt-4 pb-2">
+            <h3 className="text-[#2C1A12] font-medium">{item.name}</h3>
+            <p className="text-[#9B7B6E] text-sm mt-1">{item.fabric}</p>
+            <p className="text-[#C2705A] font-medium mt-1">{item.price}</p>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+
+    <div className="text-center mt-12">
+      <p className="text-[#9B7B6E] text-sm italic">
+        Samples in production · Full collection launching soon
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* PROMISE */}
       <section id="promise" className="py-20 px-6 md:px-16 bg-[#2C1A12] text-[#FAF6F0] text-center">
