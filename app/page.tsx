@@ -115,7 +115,7 @@ export default function Home() {
         {/* MARQUEE */}
         <div className="bg-[#2C1A12] py-3 overflow-hidden">
           <div className="flex whitespace-nowrap animate-marquee">
-            {[...Array(2)].map((_, j) => (
+            {[...Array(6)].map((_, j) => (
               <span key={j} className="flex">
                 {['Handcrafted Sarees', 'Floral Artistry', 'Premium Fabrics', 'Modern Drape', 'Made in India', 'For Her Journey'].map((item, i) => (
                   <span key={i} className="inline-flex items-center gap-6 px-8">
